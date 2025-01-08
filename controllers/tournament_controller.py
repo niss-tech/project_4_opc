@@ -1,0 +1,2 @@
+class TournamentContoller :
+    pass
