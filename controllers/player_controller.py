@@ -1,4 +1,5 @@
 from models.player import Player
+import json
 
 class PlayerController:
     def __init__(self):
@@ -41,3 +42,17 @@ class PlayerController:
             print(f"Player {chess_id} has been updated.")
             return player
         return None
+
+    def save_to_file(self, filename="players.json"):
+            """Save players to a JSON file."""
+            with open(filename, "w") as file:
+                json.dump([player.to_dict() for player in self.players], file)
+
+    def load_from_file(self, filename="players.json"):
+        """Load players from a JSON file."""
+        try:
+            with open(filename, "r") as file:
+                data = json.load(file)
+                self.players = [Player.from_dict(player) for player in data]
+        except FileNotFoundError:
+            print(f"No existing file named {filename} found. Starting fresh.")

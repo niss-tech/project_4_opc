@@ -1,4 +1,5 @@
-from player import Player
+from .player import Player
+
 
 class Match:
     def __init__(self, player_1: Player, player_2: Player, score_1=0.0, score_2=0.0):
