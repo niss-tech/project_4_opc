@@ -102,5 +102,5 @@ Voici quelques scénarios typiques pris en charge par le programme :
 
 ## Auteurs
 
-Ce projet a été développé par **[Adamo Nisrine]** dans le cadre d'un exercice visant à appliquer les concepts de programmation orientée objet et de sérialisation des données.
+Ce projet a été développé par **Adamo Nisrine** dans le cadre d'un exercice visant à appliquer les concepts de programmation orientée objet et de sérialisation des données.
 
