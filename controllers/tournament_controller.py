@@ -1,90 +1,60 @@
+import json
 from models.tournament import Tournament
-from models.player import Player
 from models.round import Round
-
+from models.match import Match
 
 class TournamentController:
-    def __init__(self):
-        self.tournaments = []
+    def __init__(self, tournament_file="data/tournaments.json"):
+        self.tournament_file = tournament_file
+        self.tournaments = self.load_tournaments()
+
+    def load_tournaments(self):
+        """Charge les tournois depuis un fichier JSON."""
+        try:
+            with open(self.tournament_file, "r") as file:
+                data = json.load(file)
+                return [Tournament.from_dict(tournament) for tournament in data]
+        except (FileNotFoundError, json.JSONDecodeError):
+            return []
+
+    def save_tournaments(self):
+        """Sauvegarde les tournois dans un fichier JSON."""
+        with open(self.tournament_file, "w") as file:
+            json.dump([tournament.to_dict() for tournament in self.tournaments], file, indent=4)
 
     def create_tournament(self, name, location, start_date, end_date, description=""):
-        """Créer un nouveau tournoi."""
-        new_tournament = Tournament(name, location, start_date, end_date, description)
-        self.tournaments.append(new_tournament)
-        print(f"Tournament '{name}' created in {location}.")
-        return new_tournament
+        """Crée un nouveau tournoi et sauvegarde."""
+        tournament = Tournament(name, location, start_date, end_date, description)
+        self.tournaments.append(tournament)
+        self.save_tournaments()
+        return tournament
 
-    def add_player_to_tournament(self, tournament_name, player):
-        """Ajouter un joueur à un tournoi spécifique."""
-        tournament = self.find_tournament_by_name(tournament_name)
-        if tournament:
-            if player in tournament.players:
-                print(f"Player {player.first_name} {player.last_name} is already in the tournament.")
-            else:
-                tournament.add_player(player)
-                print(f"Player {player.first_name} {player.last_name} added to tournament '{tournament_name}'.")
+    def add_player_to_tournament(self, tournament, player):
+        """Ajoute un joueur à un tournoi."""
+        if player not in tournament.players:
+            tournament.add_player(player)
+            self.save_tournaments()  # Sauvegarde dans le fichier JSON
         else:
-            print(f"Tournament '{tournament_name}' not found.")
+            print("Ce joueur est déjà inscrit au tournoi.")
 
-    def add_round_to_tournament(self, tournament_name, round_instance):
-        """Ajouter un round à un tournoi spécifique."""
-        tournament = self.find_tournament_by_name(tournament_name)
-        if tournament:
-            tournament.add_round(round_instance)
-            print(f"Round '{round_instance.name}' added to tournament '{tournament_name}'.")
-        else:
-            print(f"Tournament '{tournament_name}' not found.")
 
-    def list_tournaments(self):
-        """Lister tous les tournois créés."""
-        if not self.tournaments:
-            print("No tournaments have been created yet.")
-        else:
-            print("Tournaments:")
-            for idx, tournament in enumerate(self.tournaments, start=1):
-                print(f"{idx}. {tournament.name} - {tournament.location} ({tournament.start_date} to {tournament.end_date})")
+    def generate_round(self, tournament):
+        """Génère un round pour un tournoi."""
+        if tournament.current_round >= tournament.num_rounds:
+            return None  # Le tournoi est terminé.
 
-    def find_tournament_by_name(self, name):
-        """Trouver un tournoi par son nom."""
-        for tournament in self.tournaments:
-            if tournament.name == name:
-                return tournament
-        print(f"Tournament '{name}' not found.")
-        return None
+        # Tri des joueurs par score et génération des paires
+        players = sorted(tournament.players, key=lambda p: -p.points)
+        matches = []
+        while players:
+            player1 = players.pop(0)
+            player2 = players.pop(0) if players else None
+            if player2:
+                matches.append(Match(player1, player2))
 
-    def display_tournament_details(self, name):
-        """Afficher les détails d'un tournoi."""
-        tournament = self.find_tournament_by_name(name)
-        if tournament:
-            print(f"Tournament: {tournament.name}")
-            print(f"Location: {tournament.location}")
-            print(f"Start Date: {tournament.start_date}")
-            print(f"End Date: {tournament.end_date}")
-            print(f"Description: {tournament.description}")
-            print(f"Players:")
-            for player in tournament.players:
-                print(f"- {player.first_name} {player.last_name} (ID: {player.chess_id})")
-            print(f"Rounds:")
-            for round_ in tournament.rounds:
-                print(f"- {round_.name} (Matches: {len(round_.matches)})")
-        else:
-            print(f"Tournament '{name}' not found.")
-
-    def save_to_file(self, filename="tournaments.json"):
-        """Sauvegarder les tournois dans un fichier JSON."""
-        import json
-        with open(filename, "w") as file:
-            json.dump([tournament.to_dict() for tournament in self.tournaments], file)
-        print(f"Tournaments saved to {filename}.")
-
-    def load_from_file(self, filename="tournaments.json"):
-        """Charger les tournois depuis un fichier JSON."""
-        import json
-        from models.tournament import Tournament
-        try:
-            with open(filename, "r") as file:
-                data = json.load(file)
-                self.tournaments = [Tournament.from_dict(tournament) for tournament in data]
-            print(f"Tournaments loaded from {filename}.")
-        except FileNotFoundError:
-            print(f"No file named {filename} found. Starting fresh.")
+        round_name = f"Round {tournament.current_round + 1}"
+        new_round = Round(name=round_name)
+        new_round.matches = matches
+        tournament.add_round(new_round)
+        self.save_tournaments()
+        return new_round

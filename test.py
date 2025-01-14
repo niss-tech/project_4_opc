@@ -1,18 +1,11 @@
-from controllers.player_controller import PlayerController
+class Tournament:
+    def __init__(self):
+        self.players = []
 
-# Créer une instance unique du contrôleur
-player_controller = PlayerController()
+    def add_player(self, player):
+        self.players.append(player)
 
-# Ajouter des joueurs
-player_controller.create_player("John", "Doe", "1990-01-01", "1234")
-player_controller.create_player("Jane", "Smith", "1985-05-12", "5678")
-
-# Lister les joueurs
-player_controller.list_players()
-
-# Sauvegarder dans un fichier
-player_controller.save_to_file()
-
-# Charger depuis un fichier
-player_controller.load_from_file()
-
+# Test
+tournament = Tournament()
+tournament.add_player("Joueur 1")
+print(tournament.players)  # Devrait afficher : ['Joueur 1']

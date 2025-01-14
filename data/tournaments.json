@@ -1,0 +1,13 @@
+[
+    {
+        "name": "janv-2025",
+        "location": "paris",
+        "start_date": "2025-01-10",
+        "end_date": "2025-01-11",
+        "description": "session feminine",
+        "rounds": [],
+        "players": [],
+        "current_round": 0,
+        "num_rounds": 4
+    }
+]
