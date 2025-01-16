@@ -10,8 +10,8 @@ class Tournament:
         self.description = description
         self.rounds = []
         self.players = []
-        self.current_round = 0
-        self.num_rounds = 4  # Valeur par défaut.
+        self.current_round = 0  # Assurer que current_round est initialisé
+        self.num_rounds = 4     
 
     def add_player(self, player: Player):
         """Ajoute un joueur au tournoi."""

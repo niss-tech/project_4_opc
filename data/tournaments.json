@@ -5,9 +5,31 @@
         "start_date": "2025-01-10",
         "end_date": "2025-01-11",
         "description": "session feminine",
-        "rounds": [],
+        "rounds": [
+            {
+                "name": "Round 1",
+                "round_number": 1,
+                "matches": [],
+                "start_time": "2025-01-16T18:07:29.712297",
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "round_number": 2,
+                "matches": [],
+                "start_time": "2025-01-16T18:36:14.185650",
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "round_number": 3,
+                "matches": [],
+                "start_time": "2025-01-16T19:14:00.716181",
+                "end_time": null
+            }
+        ],
         "players": [],
-        "current_round": 0,
+        "current_round": 3,
         "num_rounds": 4
     }
 ]

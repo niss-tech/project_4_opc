@@ -1,3 +1,5 @@
+from .player import Player
+
 class Match:
     def __init__(self, player_1, player_2, score_1=0.0, score_2=0.0):
         self.player_1 = player_1

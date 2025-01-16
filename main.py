@@ -1,13 +1,14 @@
 from models.player import Player
 from controllers.player_controller import PlayerController
 from controllers.tournament_controller import TournamentController
+from controllers.round_controller import RoundController  # Import de RoundController
 from views.menu import Menu
 from views.report import Report
-
 
 def main():
     player_controller = PlayerController()
     tournament_controller = TournamentController()
+    round_controller = RoundController()  # Création de l'instance de RoundController
 
     while True:
         choice = Menu.main_menu()
@@ -30,33 +31,53 @@ def main():
 
         elif choice == "2":  # Gestion des tournois
             while True:
-                    tournament_choice = Menu.tournament_menu()
-                    if tournament_choice == "1":  # Créer un tournoi
-                        name = input("Nom du tournoi : ")
-                        location = input("Lieu : ")
-                        start_date = input("Date de début (AAAA-MM-JJ) : ")
-                        end_date = input("Date de fin (AAAA-MM-JJ) : ")
-                        description = input("Description : ")
-                        tournament_controller.create_tournament(name, location, start_date, end_date, description)
-                        print("Tournoi créé avec succès.")
+                tournament_choice = Menu.tournament_menu()
+                if tournament_choice == "1":  # Créer un tournoi
+                    name = input("Nom du tournoi : ")
+                    location = input("Lieu : ")
+                    start_date = input("Date de début (AAAA-MM-JJ) : ")
+                    end_date = input("Date de fin (AAAA-MM-JJ) : ")
+                    description = input("Description : ")
+                    tournament_controller.create_tournament(name, location, start_date, end_date, description)
+                    print("Tournoi créé avec succès.")
 
-                    elif tournament_choice == "2":  # Ajouter un joueur à un tournoi
-                        tournament_name = input("Nom du tournoi : ")
-                        tournament = next((t for t in tournament_controller.tournaments if t.name == tournament_name), None)
-                        if tournament:
-                            first_name = input("Prénom du joueur : ")
-                            last_name = input("Nom du joueur : ")
-                            birth_date = input("Date de naissance (AAAA-MM-JJ) : ")
-                            chess_id = input("Identifiant national d'échecs : ")
-                            player = Player(first_name, last_name, birth_date, chess_id)
-                            tournament.add_player(player)
-                            print(f"Le joueur {first_name} {last_name} a été ajouté au tournoi {tournament_name}.")
+                elif tournament_choice == "2":  # Ajouter un joueur à un tournoi
+                    tournament_name = input("Nom du tournoi : ")
+                    tournament = next((t for t in tournament_controller.tournaments if t.name == tournament_name), None)
+                    if tournament:
+                        first_name = input("Prénom du joueur : ")
+                        last_name = input("Nom du joueur : ")
+                        birth_date = input("Date de naissance (AAAA-MM-JJ) : ")
+                        chess_id = input("Identifiant national d'échecs : ")
+                        player = Player(first_name, last_name, birth_date, chess_id)
+                        tournament_controller.add_player_to_tournament(tournament, player)
+                        print(f"Le joueur {first_name} {last_name} a été ajouté au tournoi {tournament_name}.")
+                    else:
+                        print("Tournoi introuvable.")
+
+                elif tournament_choice == "3":  # Générer un round
+                    tournament_name = input("Nom du tournoi : ")
+                    tournament = next((t for t in tournament_controller.tournaments if t.name == tournament_name), None)
+                    if tournament:
+                        round_generated = tournament_controller.generate_round(tournament)
+                        if round_generated:
+                            print(f"Le {round_generated.name} a été généré avec succès.")
                         else:
-                            print("Tournoi introuvable.")
+                            print("Impossible de générer un round. Vérifiez que le tournoi n'est pas terminé.")
+                    else:
+                        print("Tournoi introuvable.")
 
-                    elif tournament_choice == "4":  # Retour
-                        break
+                elif tournament_choice == "4":  # Saisir les résultats des matchs
+                    tournament_name = input("Nom du tournoi : ")
+                    tournament = next((t for t in tournament_controller.tournaments if t.name == tournament_name), None)
+                    if tournament:
+                        round_number = int(input("Numéro du round pour lequel saisir les résultats : "))
+                        round_controller.enter_match_results(round_number)  # Appel de la méthode pour entrer les résultats
+                    else:
+                        print("Tournoi introuvable.")
 
+                elif tournament_choice == "5":  # Retour
+                    break
 
         elif choice == "3":  # Afficher les rapports
             while True:
@@ -84,7 +105,7 @@ def main():
                     else:
                         print("Tournoi introuvable.")
 
-                elif report_choice == "4":  # Retour
+                elif report_choice == "4": 
                     break
 
         elif choice == "4":  # Quitter

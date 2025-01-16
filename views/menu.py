@@ -25,5 +25,6 @@ class Menu:
         print("1. Créer un tournoi")
         print("2. Ajouter un joueur à un tournoi")
         print("3. Générer un round")
-        print("4. Retour au menu principal")
+        print("4. Saisir les résultats des matchs")
+        print("5. Retour au menu principal")
         return input("Choisissez une option : ")
