@@ -32,6 +32,6 @@ class Report:
         for round_instance in tournament.rounds:
             print(f"{round_instance.name} :")
             for match in round_instance.matches:
-                player1, player2 = match.player1, match.player2
-                print(f"  {player1.first_name} {player1.last_name} ({player1.points}) vs "
-                      f"{player2.first_name} {player2.last_name} ({player2.points})")
+                player_1, player_2 = match.player_1, match.player_2
+                print(f"  {player_1.first_name} {player_1.last_name} ({player_1.points}) vs "
+                      f"{player_2.first_name} {player_2.last_name} ({player_2.points})")
