@@ -89,52 +89,14 @@ def main():
                         round_instance = next((r for r in tournament.rounds if r.round_number == round_number), None)
                         
                         if round_instance and round_instance.matches:
-                            print(f"\n=== Résultats des matchs pour le Round {round_number} ===")
                             
-                            # Afficher les matchs existants
-                            for idx, match in enumerate(round_instance.matches, start=1):
-                                print(f"{idx}. {match.player_1.first_name} {match.player_1.last_name} vs {match.player_2.first_name} {match.player_2.last_name} (Scores : {match.score_1} - {match.score_2})")
-                            
-                            while True:
-                                try:
-                                    match_index = int(input("\nSélectionnez le numéro du match pour saisir le résultat : ")) - 1
-                                    if match_index < 0 or match_index >= len(round_instance.matches):
-                                        print("Numéro de match invalide. Veuillez réessayer.")
-                                        continue
-                                    
-                                    match = round_instance.matches[match_index]
-                                    print(f"Match sélectionné : {match.player_1.first_name} {match.player_1.last_name} vs {match.player_2.first_name} {match.player_2.last_name}")
-                                    
-                                    # Saisie des scores
-                                    result = input(f"Entrez le résultat (1 - {match.player_1.first_name} gagne, 2 - {match.player_2.first_name} gagne, 3 - Match nul) : ")
-                                    
-                                    if result == "1":
-                                        match.score_1 = 1.0
-                                        match.score_2 = 0.0
-                                    elif result == "2":
-                                        match.score_1 = 0.0
-                                        match.score_2 = 1.0
-                                    elif result == "3":
-                                        match.score_1 = 0.5
-                                        match.score_2 = 0.5
-                                    else:
-                                        print("Résultat invalide. Veuillez réessayer.")
-                                        continue
-                                    
-                                    print(f"Résultat enregistré : {match.player_1.first_name} {match.score_1} - {match.score_2} {match.player_2.first_name}")
-                                    
-                                    # Sauvegarder les modifications
-                                    tournament_controller.save_tournaments()
-                                    
-                                    another = input("Saisir un autre résultat ? (o/n) : ")
-                                    if another.lower() != "o":
-                                        break
-                                except ValueError:
-                                    print("Veuillez entrer un numéro valide.")
+                            round_controller.enter_match_results(tournament, round_number,tournament_controller)# Appel ici uniquement
+
                         else:
                             print("Aucun match trouvé pour ce round.")
                     else:
                         print("Tournoi introuvable.")
+
 
 
                 elif tournament_choice == "5":  # Retour

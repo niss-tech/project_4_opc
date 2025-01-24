@@ -46,10 +46,21 @@ class TournamentController:
         if new_round:
             self.save_tournaments()
 
-    
+    def list_rounds(self):
+        """Liste tous les rounds du tournoi avec leurs numéros."""
+        if not self.rounds:
+            print("Aucun round n'a encore été créé.")
+            return
 
-    def display_rounds(self):
+        print(f"\nRounds du tournoi '{self.name}':")
         for round_ in self.rounds:
-            print(f"Round {round_.round_number}: {round_.name}")
-            for match in round_.matches:
-                print(f"  {match.player_1.first_name} vs {match.player_2.first_name}")
+            print(f"- {round_.round_number}: {round_.name} (Matches : {len(round_.matches)})")
+
+
+    # def display_rounds(self):
+    #     for round_ in self.rounds:
+    #         print(f"Round {round_.round_number}: {round_.name}")
+    #         for match in round_.matches:
+    #             print(f"  {match.player_1.first_name} vs {match.player_2.first_name}")
+
+
