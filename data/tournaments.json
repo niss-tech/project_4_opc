@@ -254,7 +254,7 @@
                             "chess_id": "mel",
                             "points": 0.0
                         },
-                        "score_1": 0.0,
+                        "score_1": 1.0,
                         "score_2": 0.0
                     },
                     {
@@ -272,8 +272,8 @@
                             "chess_id": "nej",
                             "points": 0.0
                         },
-                        "score_1": 0.0,
-                        "score_2": 0.0
+                        "score_1": 0.5,
+                        "score_2": 0.5
                     },
                     {
                         "player_1": {

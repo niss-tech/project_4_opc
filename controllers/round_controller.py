@@ -57,9 +57,10 @@ class RoundController:
         # Ajouter le round au tournoi et passer au prochain round
         tournament.add_round(new_round)
         tournament.current_round += 1
+        #prend en compte les scores
+        self.enter_match_results(tournament,new_round.round_number)
+        
         return new_round
-
-
 
     def list_rounds(self):
         """Liste les rounds créés jusqu'à présent."""
