@@ -15,7 +15,7 @@ class Report:
 
     @staticmethod
     def display_tournament_details(tournament):
-        """Affiche les détails d'un tournoi."""
+        """Affiche les détails d'un tournoi, y compris le classement des joueurs."""
         print(f"\n=== Tournoi : {tournament.name} ===")
         print(f"Lieu : {tournament.location}")
         print(f"Dates : {tournament.start_date} à {tournament.end_date}")
@@ -24,6 +24,12 @@ class Report:
         print("Joueurs inscrits :")
         for player in tournament.players:
             print(f"- {player.last_name}, {player.first_name} ({player.chess_id})")
+
+        # Afficher le classement des joueurs
+        print("\n=== Classement des Joueurs ===")
+        sorted_players = sorted(tournament.players, key=lambda player: player.points, reverse=True)
+        for idx, player in enumerate(sorted_players, start=1):
+            print(f"{idx}. {player.first_name} {player.last_name} - {player.points} points")
 
     @staticmethod
     def display_rounds(tournament):

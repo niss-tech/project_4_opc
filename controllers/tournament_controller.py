@@ -7,9 +7,9 @@ from views.report import Report
 
 class TournamentController:
     def __init__(self, tournament_file="data/tournaments.json"):
-            self.tournament_file = tournament_file
-            self.tournaments = self.load_tournaments()
-            self.match_controller = MatchController()
+        self.tournament_file = tournament_file
+        self.tournaments = self.load_tournaments()
+        self.match_controller = MatchController()
 
     def load_tournaments(self):
         """Charge les tournois depuis un fichier JSON."""
@@ -56,11 +56,11 @@ class TournamentController:
         for round_ in self.rounds:
             print(f"- {round_.round_number}: {round_.name} (Matches : {len(round_.matches)})")
 
-
-    # def display_rounds(self):
-    #     for round_ in self.rounds:
-    #         print(f"Round {round_.round_number}: {round_.name}")
-    #         for match in round_.matches:
-    #             print(f"  {match.player_1.first_name} vs {match.player_2.first_name}")
-
-
+    def rank_players(self, tournament):
+        """Classe les joueurs par leurs points totaux dans le tournoi."""
+        # Trie les joueurs par ordre décroissant de leurs points
+        sorted_players = sorted(tournament.players, key=lambda player: player.points, reverse=True)
+        
+        print("\n=== Classement des joueurs ===")
+        for idx, player in enumerate(sorted_players, start=1):
+            print(f"{idx}. {player.first_name} {player.last_name} - {player.points} points")
