@@ -1,3 +1,4 @@
+
 from controllers import tournament_controller
 from models.round import Round
 from models.match import Match
@@ -44,7 +45,6 @@ class RoundController:
                 print(f"Impossible d'apparier {player_1.first_name} {player_1.last_name}.")
 
         tournament.add_round(new_round)
-        tournament.current_round += 1
         return new_round
 
     def find_opponent(self, player_1, players, played_matches):
