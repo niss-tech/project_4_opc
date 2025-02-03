@@ -5,48 +5,94 @@
         "start_date": "2025-01-24",
         "end_date": "2025-01-24",
         "description": "jsp sah",
-        "rounds": [],
+        "rounds": [
+            {
+                "name": "Round 1",
+                "round_number": 1,
+                "matches": [
+                    {
+                        "player_1": {
+                            "first_name": "zina",
+                            "last_name": "bender",
+                            "birth_date": "2003-05-18",
+                            "chess_id": "zin",
+                            "points": 0.0
+                        },
+                        "player_2": {
+                            "first_name": "khadija",
+                            "last_name": "mawhib",
+                            "birth_date": "1974-08-07",
+                            "chess_id": "kha",
+                            "points": 1.0
+                        },
+                        "score_1": 0.0,
+                        "score_2": 1.0
+                    },
+                    {
+                        "player_1": {
+                            "first_name": "omar",
+                            "last_name": "adamo",
+                            "birth_date": "2003-10-04",
+                            "chess_id": "oma",
+                            "points": 0.0
+                        },
+                        "player_2": {
+                            "first_name": "nisrine",
+                            "last_name": "adamo",
+                            "birth_date": "2002-10-22",
+                            "chess_id": "nin",
+                            "points": 0.0
+                        },
+                        "score_1": 0.0,
+                        "score_2": 0.0
+                    },
+                    {
+                        "player_1": {
+                            "first_name": "nejma",
+                            "last_name": "adamo",
+                            "birth_date": "2002-11-04",
+                            "chess_id": "nej",
+                            "points": 0.0
+                        },
+                        "player_2": {
+                            "first_name": "vanessa",
+                            "last_name": "adamo",
+                            "birth_date": "2004-09-08",
+                            "chess_id": "van",
+                            "points": 0.0
+                        },
+                        "score_1": 0.0,
+                        "score_2": 0.0
+                    },
+                    {
+                        "player_1": {
+                            "first_name": "melia",
+                            "last_name": "reri",
+                            "birth_date": "2003-09-10",
+                            "chess_id": "mel",
+                            "points": 0.0
+                        },
+                        "player_2": {
+                            "first_name": "sabrina",
+                            "last_name": "saidi",
+                            "birth_date": "2001-08-31",
+                            "chess_id": "sab",
+                            "points": 0.0
+                        },
+                        "score_1": 0.0,
+                        "score_2": 0.0
+                    }
+                ],
+                "start_time": "2025-02-03T02:39:06.636225",
+                "end_time": null
+            }
+        ],
         "players": [
             {
                 "first_name": "khadija",
                 "last_name": "mawhib",
                 "birth_date": "1974-08-07",
                 "chess_id": "kha",
-                "points": 0.0
-            },
-            {
-                "first_name": "nisrine",
-                "last_name": "adamo",
-                "birth_date": "2002-10-22",
-                "chess_id": "nin",
-                "points": 0.0
-            },
-            {
-                "first_name": "sabrina",
-                "last_name": "saidi",
-                "birth_date": "2001-08-31",
-                "chess_id": "sab",
-                "points": 0.0
-            },
-            {
-                "first_name": "melia",
-                "last_name": "reri",
-                "birth_date": "2003-09-10",
-                "chess_id": "mel",
-                "points": 0.0
-            },
-            {
-                "first_name": "vanessa",
-                "last_name": "adamo",
-                "birth_date": "2004-09-08",
-                "chess_id": "van",
-                "points": 0.0
-            },
-            {
-                "first_name": "zina",
-                "last_name": "bender",
-                "birth_date": "2003-05-18",
-                "chess_id": "zin",
                 "points": 0.0
             },
             {
@@ -57,14 +103,49 @@
                 "points": 0.0
             },
             {
+                "first_name": "nisrine",
+                "last_name": "adamo",
+                "birth_date": "2002-10-22",
+                "chess_id": "nin",
+                "points": 0.0
+            },
+            {
+                "first_name": "zina",
+                "last_name": "bender",
+                "birth_date": "2003-05-18",
+                "chess_id": "zin",
+                "points": 0.0
+            },
+            {
                 "first_name": "nejma",
                 "last_name": "adamo",
                 "birth_date": "2002-11-04",
                 "chess_id": "nej",
                 "points": 0.0
+            },
+            {
+                "first_name": "vanessa",
+                "last_name": "adamo",
+                "birth_date": "2004-09-08",
+                "chess_id": "van",
+                "points": 0.0
+            },
+            {
+                "first_name": "melia",
+                "last_name": "reri",
+                "birth_date": "2003-09-10",
+                "chess_id": "mel",
+                "points": 0.0
+            },
+            {
+                "first_name": "sabrina",
+                "last_name": "saidi",
+                "birth_date": "2001-08-31",
+                "chess_id": "sab",
+                "points": 0.0
             }
         ],
-        "current_round": 0,
+        "current_round": 1,
         "num_rounds": 4
     }
 ]
