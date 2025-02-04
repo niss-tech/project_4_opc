@@ -12,17 +12,17 @@
                 "matches": [
                     {
                         "player_1": {
-                            "first_name": "omar",
+                            "first_name": "vanessa",
                             "last_name": "adamo",
-                            "birth_date": "2003-10-04",
-                            "chess_id": "oma",
+                            "birth_date": "2004-09-08",
+                            "chess_id": "van",
                             "points": 2.0
                         },
                         "player_2": {
-                            "first_name": "melia",
-                            "last_name": "reri",
-                            "birth_date": "2003-09-10",
-                            "chess_id": "mel",
+                            "first_name": "nisrine",
+                            "last_name": "adamo",
+                            "birth_date": "2002-10-22",
+                            "chess_id": "nin",
                             "points": 0.5
                         },
                         "score_1": 1.0,
@@ -30,21 +30,39 @@
                     },
                     {
                         "player_1": {
-                            "first_name": "nisrine",
-                            "last_name": "adamo",
-                            "birth_date": "2002-10-22",
-                            "chess_id": "nin",
+                            "first_name": "zina",
+                            "last_name": "bender",
+                            "birth_date": "2003-05-18",
+                            "chess_id": "zin",
                             "points": 0.5
+                        },
+                        "player_2": {
+                            "first_name": "omar",
+                            "last_name": "adamo",
+                            "birth_date": "2003-10-04",
+                            "chess_id": "oma",
+                            "points": 1.0
+                        },
+                        "score_1": 0.0,
+                        "score_2": 1.0
+                    },
+                    {
+                        "player_1": {
+                            "first_name": "khadija",
+                            "last_name": "mawhib",
+                            "birth_date": "1974-08-07",
+                            "chess_id": "kha",
+                            "points": 1.0
                         },
                         "player_2": {
                             "first_name": "sabrina",
                             "last_name": "saidi",
                             "birth_date": "2001-08-31",
                             "chess_id": "sab",
-                            "points": 1.0
+                            "points": 0.5
                         },
-                        "score_1": 0.0,
-                        "score_2": 1.0
+                        "score_1": 1.0,
+                        "score_2": 0.0
                     },
                     {
                         "player_1": {
@@ -52,38 +70,20 @@
                             "last_name": "adamo",
                             "birth_date": "2002-11-04",
                             "chess_id": "nej",
-                            "points": 1.0
-                        },
-                        "player_2": {
-                            "first_name": "zina",
-                            "last_name": "bender",
-                            "birth_date": "2003-05-18",
-                            "chess_id": "zin",
-                            "points": 0.5
-                        },
-                        "score_1": 1.0,
-                        "score_2": 0.0
-                    },
-                    {
-                        "player_1": {
-                            "first_name": "vanessa",
-                            "last_name": "adamo",
-                            "birth_date": "2004-09-08",
-                            "chess_id": "van",
                             "points": 0.5
                         },
                         "player_2": {
-                            "first_name": "khadija",
-                            "last_name": "mawhib",
-                            "birth_date": "1974-08-07",
-                            "chess_id": "kha",
+                            "first_name": "melia",
+                            "last_name": "reri",
+                            "birth_date": "2003-09-10",
+                            "chess_id": "mel",
                             "points": 2.0
                         },
                         "score_1": 0.0,
                         "score_2": 1.0
                     }
                 ],
-                "start_time": "2025-02-04T14:59:07.732180",
+                "start_time": "2025-02-04T15:37:04.719378",
                 "end_time": null
             },
             {
@@ -92,17 +92,17 @@
                 "matches": [
                     {
                         "player_1": {
+                            "first_name": "vanessa",
+                            "last_name": "adamo",
+                            "birth_date": "2004-09-08",
+                            "chess_id": "van",
+                            "points": 2.0
+                        },
+                        "player_2": {
                             "first_name": "omar",
                             "last_name": "adamo",
                             "birth_date": "2003-10-04",
                             "chess_id": "oma",
-                            "points": 2.0
-                        },
-                        "player_2": {
-                            "first_name": "sabrina",
-                            "last_name": "saidi",
-                            "birth_date": "2001-08-31",
-                            "chess_id": "sab",
                             "points": 1.0
                         },
                         "score_1": 1.0,
@@ -110,17 +110,17 @@
                     },
                     {
                         "player_1": {
-                            "first_name": "nejma",
-                            "last_name": "adamo",
-                            "birth_date": "2002-11-04",
-                            "chess_id": "nej",
-                            "points": 1.0
-                        },
-                        "player_2": {
                             "first_name": "khadija",
                             "last_name": "mawhib",
                             "birth_date": "1974-08-07",
                             "chess_id": "kha",
+                            "points": 1.0
+                        },
+                        "player_2": {
+                            "first_name": "melia",
+                            "last_name": "reri",
+                            "birth_date": "2003-09-10",
+                            "chess_id": "mel",
                             "points": 2.0
                         },
                         "score_1": 0.0,
@@ -128,17 +128,17 @@
                     },
                     {
                         "player_1": {
-                            "first_name": "melia",
-                            "last_name": "reri",
-                            "birth_date": "2003-09-10",
-                            "chess_id": "mel",
-                            "points": 0.5
-                        },
-                        "player_2": {
                             "first_name": "nisrine",
                             "last_name": "adamo",
                             "birth_date": "2002-10-22",
                             "chess_id": "nin",
+                            "points": 0.5
+                        },
+                        "player_2": {
+                            "first_name": "zina",
+                            "last_name": "bender",
+                            "birth_date": "2003-05-18",
+                            "chess_id": "zin",
                             "points": 0.5
                         },
                         "score_1": 0.5,
@@ -146,24 +146,24 @@
                     },
                     {
                         "player_1": {
-                            "first_name": "zina",
-                            "last_name": "bender",
-                            "birth_date": "2003-05-18",
-                            "chess_id": "zin",
+                            "first_name": "sabrina",
+                            "last_name": "saidi",
+                            "birth_date": "2001-08-31",
+                            "chess_id": "sab",
                             "points": 0.5
                         },
                         "player_2": {
-                            "first_name": "vanessa",
+                            "first_name": "nejma",
                             "last_name": "adamo",
-                            "birth_date": "2004-09-08",
-                            "chess_id": "van",
+                            "birth_date": "2002-11-04",
+                            "chess_id": "nej",
                             "points": 0.5
                         },
                         "score_1": 0.5,
                         "score_2": 0.5
                     }
                 ],
-                "start_time": "2025-02-04T15:01:00.750423",
+                "start_time": "2025-02-04T15:40:49.720747",
                 "end_time": null
             },
             {
@@ -172,54 +172,36 @@
                 "matches": [
                     {
                         "player_1": {
+                            "first_name": "vanessa",
+                            "last_name": "adamo",
+                            "birth_date": "2004-09-08",
+                            "chess_id": "van",
+                            "points": 2.0
+                        },
+                        "player_2": {
+                            "first_name": "melia",
+                            "last_name": "reri",
+                            "birth_date": "2003-09-10",
+                            "chess_id": "mel",
+                            "points": 2.0
+                        },
+                        "score_1": 0.0,
+                        "score_2": 0.0
+                    },
+                    {
+                        "player_1": {
                             "first_name": "omar",
                             "last_name": "adamo",
                             "birth_date": "2003-10-04",
                             "chess_id": "oma",
-                            "points": 2.0
+                            "points": 1.0
                         },
                         "player_2": {
                             "first_name": "khadija",
                             "last_name": "mawhib",
                             "birth_date": "1974-08-07",
                             "chess_id": "kha",
-                            "points": 2.0
-                        },
-                        "score_1": 0.0,
-                        "score_2": 0.0
-                    },
-                    {
-                        "player_1": {
-                            "first_name": "sabrina",
-                            "last_name": "saidi",
-                            "birth_date": "2001-08-31",
-                            "chess_id": "sab",
                             "points": 1.0
-                        },
-                        "player_2": {
-                            "first_name": "nejma",
-                            "last_name": "adamo",
-                            "birth_date": "2002-11-04",
-                            "chess_id": "nej",
-                            "points": 1.0
-                        },
-                        "score_1": 0.0,
-                        "score_2": 0.0
-                    },
-                    {
-                        "player_1": {
-                            "first_name": "melia",
-                            "last_name": "reri",
-                            "birth_date": "2003-09-10",
-                            "chess_id": "mel",
-                            "points": 0.5
-                        },
-                        "player_2": {
-                            "first_name": "zina",
-                            "last_name": "bender",
-                            "birth_date": "2003-05-18",
-                            "chess_id": "zin",
-                            "points": 0.5
                         },
                         "score_1": 0.0,
                         "score_2": 0.0
@@ -233,34 +215,45 @@
                             "points": 0.5
                         },
                         "player_2": {
-                            "first_name": "vanessa",
+                            "first_name": "sabrina",
+                            "last_name": "saidi",
+                            "birth_date": "2001-08-31",
+                            "chess_id": "sab",
+                            "points": 0.5
+                        },
+                        "score_1": 0.0,
+                        "score_2": 0.0
+                    },
+                    {
+                        "player_1": {
+                            "first_name": "zina",
+                            "last_name": "bender",
+                            "birth_date": "2003-05-18",
+                            "chess_id": "zin",
+                            "points": 0.5
+                        },
+                        "player_2": {
+                            "first_name": "nejma",
                             "last_name": "adamo",
-                            "birth_date": "2004-09-08",
-                            "chess_id": "van",
+                            "birth_date": "2002-11-04",
+                            "chess_id": "nej",
                             "points": 0.5
                         },
                         "score_1": 0.0,
                         "score_2": 0.0
                     }
                 ],
-                "start_time": "2025-02-04T15:02:52.603386",
+                "start_time": "2025-02-04T15:42:50.488828",
                 "end_time": null
             }
         ],
         "players": [
             {
-                "first_name": "omar",
+                "first_name": "vanessa",
                 "last_name": "adamo",
-                "birth_date": "2003-10-04",
-                "chess_id": "oma",
+                "birth_date": "2004-09-08",
+                "chess_id": "van",
                 "points": 2.0
-            },
-            {
-                "first_name": "melia",
-                "last_name": "reri",
-                "birth_date": "2003-09-10",
-                "chess_id": "mel",
-                "points": 0.5
             },
             {
                 "first_name": "nisrine",
@@ -270,20 +263,6 @@
                 "points": 0.5
             },
             {
-                "first_name": "sabrina",
-                "last_name": "saidi",
-                "birth_date": "2001-08-31",
-                "chess_id": "sab",
-                "points": 1.0
-            },
-            {
-                "first_name": "nejma",
-                "last_name": "adamo",
-                "birth_date": "2002-11-04",
-                "chess_id": "nej",
-                "points": 1.0
-            },
-            {
                 "first_name": "zina",
                 "last_name": "bender",
                 "birth_date": "2003-05-18",
@@ -291,17 +270,38 @@
                 "points": 0.5
             },
             {
-                "first_name": "vanessa",
+                "first_name": "omar",
                 "last_name": "adamo",
-                "birth_date": "2004-09-08",
-                "chess_id": "van",
-                "points": 0.5
+                "birth_date": "2003-10-04",
+                "chess_id": "oma",
+                "points": 1.0
             },
             {
                 "first_name": "khadija",
                 "last_name": "mawhib",
                 "birth_date": "1974-08-07",
                 "chess_id": "kha",
+                "points": 1.0
+            },
+            {
+                "first_name": "sabrina",
+                "last_name": "saidi",
+                "birth_date": "2001-08-31",
+                "chess_id": "sab",
+                "points": 0.5
+            },
+            {
+                "first_name": "nejma",
+                "last_name": "adamo",
+                "birth_date": "2002-11-04",
+                "chess_id": "nej",
+                "points": 0.5
+            },
+            {
+                "first_name": "melia",
+                "last_name": "reri",
+                "birth_date": "2003-09-10",
+                "chess_id": "mel",
                 "points": 2.0
             }
         ],

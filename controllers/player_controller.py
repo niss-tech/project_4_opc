@@ -1,6 +1,7 @@
 import json
 from models.player import Player
 
+
 class PlayerController:
     def __init__(self, player_file="data/players.json"):
         self.player_file = player_file

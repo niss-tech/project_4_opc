@@ -14,4 +14,3 @@ class MatchController:
                     f"{match.player_2.first_name} (Scores: {match.score_1} - "
                     f"{match.score_2})"
                 )
-
