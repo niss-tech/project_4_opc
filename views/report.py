@@ -32,7 +32,6 @@ class Report:
             print(f"{idx}. {player.first_name} {player.last_name} - {player.points} points")
 
     @staticmethod
-    
     def display_rounds(tournament):
         """Affiche les rounds d'un tournoi et leurs matchs."""
         print(f"\n=== Rounds du tournoi : {tournament.name} ===")

@@ -1,10 +1,6 @@
-
 import json
 from models.tournament import Tournament
-from models.round import Round
-from models.match import Match
 from .match_controller import MatchController
-from views.report import Report
 
 
 class TournamentController:
@@ -48,27 +44,11 @@ class TournamentController:
         if new_round:
             self.save_tournaments()
 
-    
-
     def rank_players(self, tournament):
         """Classe les joueurs par leurs points totaux dans le tournoi."""
         # Trie les joueurs par ordre décroissant de leurs points
         sorted_players = sorted(tournament.players, key=lambda player: player.points, reverse=True)
-        
+
         print("\n=== Classement des joueurs ===")
         for idx, player in enumerate(sorted_players, start=1):
             print(f"{idx}. {player.first_name} {player.last_name} - {player.points} points")
-
-
-
-
-
-    #def list_rounds(self):
-    #     """Liste tous les rounds du tournoi avec leurs numéros."""
-    #     if not self.rounds:
-    #         print("Aucun round n'a encore été créé.")
-    #         return
-
-    #     print(f"\nRounds du tournoi '{self.name}':")
-    #     for round_ in self.rounds:
-    #         print(f"- {round_.round_number}: {round_.name} (Matches : {len(round_.matches)})")

@@ -2,6 +2,7 @@
 from .round import Round
 from .player import Player
 
+
 class Tournament:
     def __init__(self, name, location, start_date, end_date, description="", num_rounds=4):
         self.name = name
@@ -13,7 +14,7 @@ class Tournament:
         self.players = []
         self.rounds = []
         self.current_round = 0
-        self.played_matches = set()  # Paires de joueurs ayant déjà joué     
+        self.played_matches = set()  # Paires de joueurs ayant déjà joué
 
     def add_player(self, player: Player):
         """Ajoute un joueur au tournoi."""
@@ -39,7 +40,11 @@ class Tournament:
         for round_ in self.rounds:
             print(f"\n{round_.name} (Round {round_.round_number}):")
             for match in round_.matches:
-                print(f"{match.player_1.first_name} {match.player_1.last_name} vs {match.player_2.first_name} {match.player_2.last_name} => Score : {match.score_1} - {match.score_2}")
+                print(
+                    f"{match.player_1.first_name} {match.player_1.last_name}"
+                    f"vs {match.player_2.first_name} {match.player_2.last_name}"
+                    f"=> Score : {match.score_1} - {match.score_2}"
+                )
 
     def to_dict(self):
         """Convertit l'objet tournoi en dictionnaire."""

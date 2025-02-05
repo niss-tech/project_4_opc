@@ -27,7 +27,10 @@ class RoundController:
             for match in last_round.matches:
                 if match.score_1 == 0.0 and match.score_2 == 0.0:  # Vérifie si les scores n'ont pas été modifiés
                     print(f"⚠️ Match non saisi détecté : {match.player_1.first_name} vs {match.player_2.first_name}")
-                    print(f"⛔ Impossible de générer le Round {tournament.current_round + 1} tant que tous les scores ne sont pas saisis.")
+                    print(
+                        f"⛔ Impossible de générer le Round {tournament.current_round + 1} "
+                        "tant que tous les scores ne sont pas saisis."
+                    )
                     return None  # Bloque immédiatement la génération du round
 
         # Mélanger les joueurs pour le premier round
@@ -47,7 +50,10 @@ class RoundController:
             if player_2:
                 match = Match(player_1, player_2)
                 new_round.matches.append(match)
-                tournament.played_matches.update({(player_1.chess_id, player_2.chess_id), (player_2.chess_id, player_1.chess_id)})
+                tournament.played_matches.update({
+                    (player_1.chess_id, player_2.chess_id),
+                    (player_2.chess_id, player_1.chess_id)
+                })
                 print(f"✅ Match ajouté : {player_1.first_name} vs {player_2.first_name}")
             else:
                 print(f"⚠️ Impossible d'apparier {player_1.first_name} {player_1.last_name}.")
@@ -82,8 +88,10 @@ class RoundController:
         while True:
             print(f"\n=== Matchs du Round {round_number} ===")
             for idx, match in enumerate(round_.matches, start=1):
-                print(f"{idx}. {match.player_1.first_name} vs {match.player_2.first_name} (Scores : {match.score_1} - {match.score_2})")
-
+                print(
+                    f"{idx}. {match.player_1.first_name} vs {match.player_2.first_name} "
+                    f"(Scores : {match.score_1} - {match.score_2})"
+                )
             try:
                 match_index = int(input("\nSélectionnez le numéro du match pour saisir/modifier le résultat : ")) - 1
                 if not (0 <= match_index < len(round_.matches)):
@@ -110,8 +118,10 @@ class RoundController:
             match.player_2.points -= match.score_2
 
         # Demander le nouveau score à l'utilisateur
-        result = input(f"Entrez le résultat (1 - {match.player_1.first_name} gagne, "f"2 - {match.player_2.first_name} gagne, 3 - Match nul) : ")
-
+        result = input(
+            f"Entrez le résultat (1-{match.player_1.first_name} gagne, "
+            f"2-{match.player_2.first_name} gagne, 3-Nul) : "
+        )
         # Mettre à jour les scores
         if result == "1":
             match.score_1, match.score_2 = 1.0, 0.0
@@ -127,5 +137,7 @@ class RoundController:
         match.player_1.points += match.score_1
         match.player_2.points += match.score_2
 
-        print(f"Points mis à jour : {match.player_1.first_name} ({match.player_1.points} points), "
-            f"{match.player_2.first_name} ({match.player_2.points} points).")
+        print(
+            f"Points mis à jour : {match.player_1.first_name} ({match.player_1.points} points), "
+            f"{match.player_2.first_name} ({match.player_2.points} points)."
+        )

@@ -40,13 +40,24 @@ gestion_club_echec/
 │   ├── player_controller.py
 │   ├── round_controller.py
 │   └── tournament_controller.py
+├── data/
+│   ├── players.json
+│   └── tournaments.json
+├── flake8_rapport/
+│   └── rapport.html
 ├── models/
 │   ├── __init__.py
 │   ├── match.py
 │   ├── player.py
 │   ├── round.py
 │   └── tournament.py
+├── views/
+│   ├── __init__.py
+│   ├── menu.py
+│   └── report.py
+├── .flake8
 ├── main.py
+├── requirements.txt
 └── README.md
 ```
 
@@ -67,7 +78,7 @@ Avant de commencer, assurez-vous que votre environnement répond aux exigences s
 
 1. Clonez le repository dans votre environnement local :
    ```bash
-   git clone <URL_DU_REPOSITORY>
+   git clone <https://github.com/niss-tech/project_4_opc.git>
    cd gestion_club_echec
    ```
 
@@ -78,7 +89,7 @@ Avant de commencer, assurez-vous que votre environnement répond aux exigences s
    venv\Scripts\activate         # Sur Windows
    ```
 
-3. Installez les dépendances (si applicables) :
+3. Installez les dépendances :
    ```bash
    pip install -r requirements.txt
    ```
@@ -99,6 +110,37 @@ Voici quelques scénarios typiques pris en charge par le programme :
 - **Ajouter un joueur** : Entrez ses informations (nom, prénom, ID).  
 - **Créer un tournoi** : Spécifiez le lieu, le nom, et la durée, puis ajoutez des joueurs et des rounds.  
 - **Lister les matchs ou rounds** : Affichez les données de manière détaillée dans la console.
+
+
+## Vérification du Code avec Flake8
+Pour vérifier que votre code respecte les normes PEP 8, vous pouvez utiliser **Flake8** et générer un rapport HTML.
+
+### Installation de Flake8
+Si **Flake8** n'est pas encore installé, vous pouvez l'installer avec la commande suivante :
+   ```bash
+   pip install flake8
+   ```
+
+
+### Vérification du Code
+Pour vérifier le code, exécutez la commande suivante dans votre terminal à la racine du projet :
+   ```bash
+   flake8
+   ```
+
+
+Cela vérifiera la conformité du code avec les règles PEP 8 et affichera les erreurs ou les avertissements dans le terminal.
+
+### Génération du Rapport Flake8
+Pour générer un rapport au format HTML, utilisez la commande suivante :
+
+```bash
+   flake8 --output-file=flake8_rapport/rapport.html --format=html
+   ```
+
+
+Le rapport sera généré dans le dossier `flake8_rapport` sous le nom de fichier `rapport.html`.
+
 
 ## Auteurs
 
