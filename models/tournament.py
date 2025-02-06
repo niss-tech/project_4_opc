@@ -1,4 +1,3 @@
-
 from .round import Round
 from .player import Player
 

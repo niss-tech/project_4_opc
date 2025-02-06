@@ -11,6 +11,7 @@ class Round:
         self.end_time = None
 
     def end_round(self):
+        """Enregistre l'heure de fin du round."""
         self.end_time = datetime.datetime.now()
 
     def to_dict(self):

@@ -110,6 +110,11 @@ class RoundController:
             except ValueError:
                 print("Veuillez entrer un numéro valide.")
 
+            # Vérifier si tous les scores ont été saisis avant de clore le round
+            if all(match.score_1 is not None and match.score_2 is not None for match in round_.matches):
+                self.end_round(tournament, round_number, tournament_controller)  # Fin du round
+                tournament_controller.save_tournaments()  # Sauvegarde des modifications
+
     def update_player_scores(self, match):
         """Met à jour les points des joueurs après qu'un score a été enregistré ou modifié."""
         # Retirer les anciens scores avant d'assigner les nouveaux
@@ -141,3 +146,16 @@ class RoundController:
             f"Points mis à jour : {match.player_1.first_name} ({match.player_1.points} points), "
             f"{match.player_2.first_name} ({match.player_2.points} points)."
         )
+
+    def end_round(self, tournament, round_number, tournament_controller):
+        """Marque la fin d'un round en enregistrant l'heure de fin."""
+        round_ = next((r for r in tournament.rounds if r.round_number == round_number), None)
+
+        if not round_:
+            print(f"🚨 Round {round_number} introuvable.")
+            return
+        round_.end_round()
+
+        # Sauvegarde après mise à jour
+        tournament_controller.save_tournaments()
+        
