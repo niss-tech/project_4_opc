@@ -158,4 +158,3 @@ class RoundController:
 
         # Sauvegarde après mise à jour
         tournament_controller.save_tournaments()
-        

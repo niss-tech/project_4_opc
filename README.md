@@ -118,7 +118,7 @@ Pour vérifier que votre code respecte les normes PEP 8, vous pouvez utiliser **
 ### Installation de Flake8
 Si **Flake8** n'est pas encore installé, vous pouvez l'installer avec la commande suivante :
    ```bash
-   pip install flake8
+   pip install flake8 flake8-html
    ```
 
 
