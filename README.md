@@ -78,8 +78,8 @@ Avant de commencer, assurez-vous que votre environnement répond aux exigences s
 
 1. Clonez le repository dans votre environnement local :
    ```bash
-   git clone <https://github.com/niss-tech/project_4_opc.git>
-   cd gestion_club_echec
+   git clone https://github.com/niss-tech/project_4_opc.git
+   cd project_4_opc
    ```
 
 2. Assurez-vous d’avoir un environnement virtuel actif :
