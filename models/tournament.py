@@ -27,7 +27,6 @@ class Tournament:
         self.rounds.append(round_instance)
         self.current_round = round_instance.round_number  # Mise à jour centralisée
 
-
     def to_dict(self):
         """Convertit l'objet tournoi en dictionnaire."""
         return {
@@ -57,4 +56,3 @@ class Tournament:
         tournament.current_round = data["current_round"]
         tournament.num_rounds = data["num_rounds"]
         return tournament
-
