@@ -113,36 +113,18 @@ Voici quelques scénarios typiques pris en charge par le programme :
 
 
 ## Vérification du Code avec Flake8
-Pour vérifier que votre code respecte les normes PEP 8, vous pouvez utiliser **Flake8** et générer un rapport HTML.
+Pour vérifier que votre code respecte les normes PEP 8, utilisez **Flake8** (déjà installé grâce aux dépendances
+dans requirements.txt) et générer un rapport HTML.
 
-### Installation de Flake8
-Si **Flake8** n'est pas encore installé, vous pouvez l'installer avec la commande suivante :
+Exécutez la commande suivante dans votre terminal à la racine du projet :
    ```bash
-   pip install flake8 flake8-html
+   python run_flake8.py
    ```
 
 
-### Vérification du Code
-Pour vérifier le code, exécutez la commande suivante dans votre terminal à la racine du projet :
-   ```bash
-   flake8
-   ```
-
-
-Cela vérifiera la conformité du code avec les règles PEP 8 et affichera les erreurs ou les avertissements dans le terminal.
-
-### Génération du Rapport Flake8
-Pour générer un rapport au format HTML, utilisez la commande suivante :
-
-```bash
-   flake8 --output-file=flake8_rapport/rapport.html --format=html
-   ```
-
-
-Le rapport sera généré dans le dossier `flake8_rapport` sous le nom de fichier `rapport.html`.
+Cela affichera les erreurs ou les avertissements dans un rapport generé au format HTML que vous retrouverez dans le dossier `flake8_rapport` sous le nom de fichier `rapport.html`..
 
 
 ## Auteurs
 
 Ce projet a été développé par **Adamo Nisrine** dans le cadre d'un exercice visant à appliquer les concepts de programmation orientée objet et de sérialisation des données.
-
