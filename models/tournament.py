@@ -19,20 +19,6 @@ class Tournament:
         """Ajoute un joueur au tournoi."""
         self.players.append(player)
 
-    def add_round(self, round_instance: Round):
-        """Ajoute un round au tournoi."""
-        if not round_instance.matches:
-            print(f"Le round {round_instance.name} n'a pas de matchs.")
-            return
-        self.rounds.append(round_instance)
-        self.current_round = round_instance.round_number  # Mise à jour centralisée
-
-    def display_players(self):
-        """Affiche la liste des joueurs inscrits dans le tournoi."""
-        print(f"Joueurs inscrits dans le tournoi '{self.name}':")
-        for player in self.players:
-            print(f"- {player.first_name} {player.last_name} (ID: {player.chess_id})")
-
     def display_rounds(self):
         """Affiche tous les rounds et leurs matchs avec les scores."""
         print(f"Rounds du tournoi '{self.name}':")
@@ -74,3 +60,17 @@ class Tournament:
         tournament.current_round = data["current_round"]
         tournament.num_rounds = data["num_rounds"]
         return tournament
+
+    # def add_round(self, round_instance: Round):
+    #     """Ajoute un round au tournoi."""
+    #     if not round_instance.matches:
+    #         print(f"Le round {round_instance.name} n'a pas de matchs.")
+    #         return
+    #     self.rounds.append(round_instance)
+    #     self.current_round = round_instance.round_number  # Mise à jour centralisée
+
+    # def display_players(self):
+    #     """Affiche la liste des joueurs inscrits dans le tournoi."""
+    #     print(f"Joueurs inscrits dans le tournoi '{self.name}':")
+    #     for player in self.players:
+    #         print(f"- {player.first_name} {player.last_name} (ID: {player.chess_id})")
