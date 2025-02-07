@@ -19,17 +19,14 @@ class Tournament:
         """Ajoute un joueur au tournoi."""
         self.players.append(player)
 
-    def display_rounds(self):
-        """Affiche tous les rounds et leurs matchs avec les scores."""
-        print(f"Rounds du tournoi '{self.name}':")
-        for round_ in self.rounds:
-            print(f"\n{round_.name} (Round {round_.round_number}):")
-            for match in round_.matches:
-                print(
-                    f"{match.player_1.first_name} {match.player_1.last_name}"
-                    f"vs {match.player_2.first_name} {match.player_2.last_name}"
-                    f"=> Score : {match.score_1} - {match.score_2}"
-                )
+    def add_round(self, round_instance: Round):
+        """Ajoute un round au tournoi."""
+        if not round_instance.matches:
+            print(f"Le round {round_instance.name} n'a pas de matchs.")
+            return
+        self.rounds.append(round_instance)
+        self.current_round = round_instance.round_number  # Mise à jour centralisée
+
 
     def to_dict(self):
         """Convertit l'objet tournoi en dictionnaire."""
@@ -61,16 +58,3 @@ class Tournament:
         tournament.num_rounds = data["num_rounds"]
         return tournament
 
-    # def add_round(self, round_instance: Round):
-    #     """Ajoute un round au tournoi."""
-    #     if not round_instance.matches:
-    #         print(f"Le round {round_instance.name} n'a pas de matchs.")
-    #         return
-    #     self.rounds.append(round_instance)
-    #     self.current_round = round_instance.round_number  # Mise à jour centralisée
-
-    # def display_players(self):
-    #     """Affiche la liste des joueurs inscrits dans le tournoi."""
-    #     print(f"Joueurs inscrits dans le tournoi '{self.name}':")
-    #     for player in self.players:
-    #         print(f"- {player.first_name} {player.last_name} (ID: {player.chess_id})")
