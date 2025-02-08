@@ -21,14 +21,18 @@ class Report:
         print(f"Dates : {tournament.start_date} à {tournament.end_date}")
         print(f"Description : {tournament.description}")
         print(f"Nombre de tours : {tournament.num_rounds}")
-        print("Joueurs inscrits :")
-        for player in tournament.players:
+
+        # Trier les joueurs par ordre alphabétique avant affichage
+        sorted_players = sorted(tournament.players, key=lambda player: (player.last_name, player.first_name))
+
+        print("\nJoueurs inscrits (triés par ordre alphabétique) :")
+        for player in sorted_players:
             print(f"- {player.last_name}, {player.first_name} ({player.chess_id})")
 
-        # Afficher le classement des joueurs
+        # Afficher le classement des joueurs par points
         print("\n=== Classement des Joueurs ===")
-        sorted_players = sorted(tournament.players, key=lambda player: player.points, reverse=True)
-        for idx, player in enumerate(sorted_players, start=1):
+        ranked_players = sorted(tournament.players, key=lambda player: player.points, reverse=True)
+        for idx, player in enumerate(ranked_players, start=1):
             print(f"{idx}. {player.first_name} {player.last_name} - {player.points} points")
 
     @staticmethod

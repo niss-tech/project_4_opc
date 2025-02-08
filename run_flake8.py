@@ -1,6 +1,5 @@
 import subprocess
 import os
-import glob
 
 
 def run_flake8():
@@ -26,22 +25,24 @@ def run_flake8():
         print("⚠️ Le code contient des erreurs.")
 
     # Nettoyer le répertoire et renommer le rapport
-    clean_flake8_report()
+    clean_flake8_report(report_dir)
 
 
 def clean_flake8_report(directory="flake8_rapport"):
     index_path = os.path.join(directory, "index.html")
     rapport_path = os.path.join(directory, "rapport.html")
 
-    # Supprimer tous les fichiers HTML sauf index.html
-    for file in glob.glob(os.path.join(directory, "*.html")):
-        if file != index_path:
-            os.remove(file)
+    # Vérifier si le fichier rapport.html existe déjà et le supprimer si nécessaire
+    if os.path.exists(rapport_path):
+        os.remove(rapport_path)
 
-    # Renommer index.html en rapport.html s'il existe
+    # Vérifier si index.html existe dans le répertoire
     if os.path.exists(index_path):
+        # Renommer index.html en rapport.html
         os.rename(index_path, rapport_path)
         print("✅ Rapport généré : flake8_rapport/rapport.html")
+    else:
+        print("⚠️ Aucun fichier index.html trouvé. Vérifiez l'exécution de flake8.")
 
 
 if __name__ == "__main__":
