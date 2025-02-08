@@ -36,7 +36,6 @@ Voici un aperçu des principaux dossiers et fichiers du projet :
 ```
 gestion_club_echec/
 ├── controllers/
-│   ├── match_controller.py
 │   ├── player_controller.py
 │   ├── round_controller.py
 │   └── tournament_controller.py

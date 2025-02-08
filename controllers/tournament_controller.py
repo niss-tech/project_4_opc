@@ -1,13 +1,11 @@
 import json
 from models.tournament import Tournament
-from .match_controller import MatchController
 
 
 class TournamentController:
     def __init__(self, tournament_file="data/tournaments.json"):
         self.tournament_file = tournament_file
         self.tournaments = self.load_tournaments()
-        self.match_controller = MatchController()
 
     def load_tournaments(self):
         """Charge les tournois depuis un fichier JSON."""

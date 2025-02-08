@@ -38,7 +38,6 @@ def clean_flake8_report(directory="flake8_rapport"):
 
     # Vérifier si index.html existe dans le répertoire
     if os.path.exists(index_path):
-        # Renommer index.html en rapport.html
         os.rename(index_path, rapport_path)
         print("✅ Rapport généré : flake8_rapport/rapport.html")
     else:
